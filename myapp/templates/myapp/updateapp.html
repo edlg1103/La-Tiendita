@@ -1,0 +1,15 @@
+{% extends 'myapp/base.html'%}
+{% block content %}
+<h1 class="text-2xl m-10 font-bold">+ Actualizar Productos
+    <img class=" flex w-25 h-20" src="{{products.image.url}}" alt="">
+</h1>
+
+<form class="bg-white shadow-md m-10 px-8" method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+    <input placeholder="Nombre" value="{{products.name}}" type="text" name="name" Id="name">
+    <input placeholder="Precio" value="{{products.price}}" type="text" name="price" Id="price">
+    <input placeholder="Descripcion" value="{{products.desc}} "type="text" name="desc" Id="desc">
+    <input type="file" accept="images/*" name="upload" Id="upload">
+    <input class="bg-green-500 text-white px-5 py-2" type="submit" name="Add product" value="Actualizar Producto" Id="">
+</form>
+{% endblock %}
